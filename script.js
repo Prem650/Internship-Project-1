@@ -89,7 +89,8 @@ if (mainContent && appContainer) {
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname;
     
-    if (currentPage.includes("index.html")) {
+    // Updated check: Triggers on index.html, or if the path is just the root "/"
+    if (currentPage.includes("index.html") || currentPage === "/" || currentPage.endsWith("/")) {
         setTimeout(() => window.location.href = "Welcome Page.html", 2000);
     }
 
