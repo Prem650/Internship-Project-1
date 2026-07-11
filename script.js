@@ -9,7 +9,7 @@ const routes = [
     { selector: "#orderSlide", url: "Orders.html" },
     { selector: "#profileSlide", url: "Profile.html" },
     { selector: "#myOrder", url: "Orders.html" },
-    { selector: "#logoutBtn", url: "intro.html" },
+    { selector: "#logoutBtn", url: "index.html" },
     { selector: ".fab-button", url: "Crave Bot.html" },
     { selector: ".fill", url: "Home Page.html" },
     { selector: ".back-btn4", url: "Home Page.html" },
@@ -89,7 +89,7 @@ if (mainContent && appContainer) {
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname;
     
-    if (currentPage.includes("intro.html")) {
+    if (currentPage.includes("index.html")) {
         setTimeout(() => window.location.href = "Welcome Page.html", 2000);
     }
 
