@@ -1,0 +1,125 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "inter";
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-color: #1e1e1e;
+}
+
+.app-container {
+position: relative;
+width: 375px;
+height: 812px;
+border-radius: 40px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+border: 8px solid #333;
+background-color: white;
+}
+
+.status-bar {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 44px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 24px;
+font-size: 14px;
+font-weight: 600;
+color: #918F8F;
+background-color:white;
+z-index: 20;
+}
+
+.status-icons {
+display: flex;
+gap: 3px;
+}
+
+
+.home-indicator {
+position: absolute;
+bottom: 14px;
+left: 50%;
+transform: translateX(-50%);
+width: 130px;
+height: 5px;
+background-color: #888;
+border-radius: 10px;
+z-index: 20;
+}
+
+.greenLine{
+position: absolute;
+bottom: 0px;
+left: 50%;
+transform: translateX(-50%);
+width: 900px;
+height: 9px;
+background-color: #08554b;
+border-radius: 10px;
+z-index: 20;
+}
+
+.animate {
+    height: 900px;
+    background-color: #08554b;
+    display: flex;
+    animation: slideUp 800ms ease-in-out forwards;
+}
+@keyframes slideUp{
+    0% {
+        /* Start completely below the viewport */
+        transform: translateY(100vh); 
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        /* Smoothly move up to its normal sitting position */
+        transform: translateY(0); 
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.logo{
+    display: flex;
+    height: 100vh;
+}
+img{
+    height: 100px;
+    position: absolute;
+    top: 45%;
+    left: 36%;
+}
+.logo {
+    animation: FadeIn 2s ease forwards; 
+}   
+@keyframes FadeIn {
+    0% {
+        opacity: 0; /* 2. Removed percentage sign */
+    }
+    100% {
+        opacity: 1; /* 2. Removed percentage sign */
+    }
+}
+.home-indicator{
+    animation: colorChange 800ms ease-in-out forwards;
+}
+@keyframes colorChange {
+    from{
+        background-color: #1a1a1a;
+    }
+    to{
+        background-color: #ffff;
+    }
+}

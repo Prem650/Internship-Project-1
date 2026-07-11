@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+}
+
+/* App Container */
+.app-container {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background: linear-gradient(180deg, #003C38 0%, #006B64 40%);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    display: flex;
+    border: 8px solid #222;
+    flex-direction: column;
+}
+
+.header-section {
+    padding: 40px 20px 30px 20px;
+    color: #ffff;
+}
+
+/* Status Bar */
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    z-index: 20;
+    background-color: transparent; /* Makes it blend beautifully with gradient */
+}
+
+.status-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* App Bar (Back Button & Title) */
+.app-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 10px 0;
+}
+
+.back-btn4 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #ffff;
+    transition: opacity 0.2s;
+}
+
+.back-btn4:active {
+    opacity: 0.6;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.spacer {
+    width: 34px; /* Matches back button width to keep title centered */
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    background-color: #F7F9F9; /* Very subtle off-white to make cards pop */
+    border-radius: 32px 32px 0 0; 
+    padding: 30px 20px 120px 20px; /* Extra bottom padding for Bottom Nav & FAB */
+    position: relative;
+    z-index: 10;
+    animation: SlideUp 800ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    overflow-y: auto; /* Allow scrolling if screen gets cramped */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.main-content::-webkit-scrollbar { 
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+@keyframes SlideUp{
+    0%{
+        transform:translateY(5vh);
+        filter:blur(5px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Meal Cards */
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.meal-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #0A6C60, #085A4F); /* Softened gradient */
+    border-radius: 20px;
+    height: 84px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(8, 85, 75, 0.15); /* More premium shadow */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meal-card:active {
+    transform: scale(0.96);
+    box-shadow: 0 4px 8px rgba(8, 85, 75, 0.1);
+}
+
+.meal-img {
+    width: 84px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px; /* Smooth inner edge */
+}
+
+.meal-info {
+    flex-grow: 1;
+    padding-left: 18px; /* Proper spacing next to image */
+    display: flex;
+    justify-content: flex-start; /* Left aligns text for better readability */
+}
+
+.meal-info h2 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.chevron {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.fab-button {
+    position: absolute;
+    bottom: 115px; 
+    right: 24px;
+    background-color: #08554b;
+    color: #fff;
+    border: none;
+    width: 56px; 
+    height: 56px;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(8, 85, 75, 0.35); 
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.fab-button:active {
+    transform: scale(0.92);
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 5%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: slideUp 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-item {
+    color: #9ca3af;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.nav-item:hover:not(.active) {
+    color: #0A6C60;
+    background-color: #f0f5f4;
+}
+
+.nav-item.active {
+    background-color: #0A6C60;
+    color: #ffffff;
+    padding: 12px 20px;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(10, 108, 96, 0.3);
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px); /* Starts completely below the screen */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Home Indicator */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 10px;
+    z-index: 25;
+}
+
+/* QR Code Modal overlay */
+.qrmass {
+    /* Wrapping container allows handling functionality in JS safely */
+}
+
+.qrcode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;        
+    height: 100%;       
+    z-index: 9999;      
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly darker for focus */
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    display: none; /* Controlled via JS */
+}
+
+.qr {
+    height: 240px;       
+    border-radius: 28px;
+    background-color: white; 
+    padding: 16px;       
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}

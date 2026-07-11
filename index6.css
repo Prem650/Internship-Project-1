@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Removes default browser blue tap highlight */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+}
+
+.app-container {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background: linear-gradient(270deg, #003C38, #006B64);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    border: 8px solid #333;
+    flex-direction: column;
+}
+
+.scroll-area {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.scroll-area::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header Section */
+.header-section {
+    padding: 55px 24px 20px 24px;
+    color: #ffff;
+}
+
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    z-index: 20;
+}
+
+.status-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* App Bar & Title */
+.app-bar {
+    display: flex;  
+    padding: 10px 0px 20px;
+    flex-direction: column;
+}
+
+.fill2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+.back-btn5 {
+    background: none;
+    border: none;
+    color: #ffff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s, transform 0.1s ease;
+}
+
+.back-btn5:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.page-title {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Order Button Spacer */
+.spacer {
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+#order {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    border-radius: 16px;
+    background-color: #08554b;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+#order:active {
+    transform: scale(0.96);
+    background-color: #06453d;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    background-color: #f8f9fa; /* Slightly softer white for contrast */
+    border-radius: 35px 35px 0 0; 
+    padding: 30px 24px;
+    position: relative;
+    z-index: 10;
+    margin-top: -10px; 
+    animation: slideUp 800ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(5vh); filter: blur(4px); opacity: 0; }
+    100% { transform: translateY(0); filter: blur(0); opacity: 1; }
+}
+
+/* Meal List & Cards */
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.meal-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Cleaner look instead of D9D9D9 */
+    border-radius: 20px;
+    height: 85px;
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meal-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background-color: #f4f6f8;
+}
+
+.meal-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+}
+
+.chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+/* Floating Action Button */
+.fab-button {
+  position: absolute;
+  bottom: 115px; 
+  right: 24px;
+  background-color: #08554b;
+  color: #fff;
+  border: none;
+  width: 56px; 
+  height: 56px;
+  border-radius: 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(8, 85, 75, 0.35); 
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.fab-button:active {
+  transform: scale(0.92);
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 5%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: slideUpNav 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes slideUpNav {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.nav-item {
+    color: #9ca3af;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.nav-item:active {
+    transform: scale(0.9);
+}
+
+.nav-item.active {
+    background-color: #0A6C60;
+    color: #ffffff;
+    padding: 12px 20px;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(10, 108, 96, 0.3);
+}
+
+/* OS UI Elements */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    z-index: 20;
+}
+
+.greenLine1 {
+    display: none;
+}
+
+/* QR Code Modal (Kept from original CSS just in case your JS calls it) */
+.qrcode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;        
+    height: 100%;       
+    z-index: 9999;      
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.qr {
+    height: 220px;       
+    border-radius: 24px;
+    background-color: white; 
+    padding: 12px;       
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+<link rel="stylesheet" href="index11.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="app-container">
+
+<div class="header-section">
+<div class="status-bar">
+    <span>9:23</span>
+    <div class="status-icons">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path fill="currentColor" d="M10.225 20.275Q9.5 19.55 9.5 18.5t.725-1.775T12 16t1.775.725t.725 1.775t-.725 1.775T12 21t-1.775-.725m5.338-9.675q1.687.6 3.062 1.65q.5.375.513.988T18.7 14.3q-.425.425-1.05.438t-1.125-.338q-.95-.65-2.1-1.025T12 13t-2.425.375t-2.1 1.025q-.5.35-1.125.325t-1.05-.45q-.425-.45-.425-1.062t.5-.988q1.375-1.05 3.063-1.638T12 10t3.563.6m2.324-5.575q2.763 1.025 4.963 2.9q.5.425.525 1.05t-.425 1.075q-.425.425-1.05.438t-1.125-.388q-1.8-1.475-4.037-2.287T12 7t-4.737.813T3.225 10.1q-.5.4-1.125.388t-1.05-.438Q.6 9.6.625 8.975t.525-1.05q2.2-1.875 4.963-2.9T12 4t5.888 1.025" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.3em"  viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <g fill="none">
+        <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+        <path fill="currentColor" d="M4 6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2V8a2 2 0 0 0-2-2z" />
+    </g>
+    </svg>
+    </div>
+</div>
+<div class="app-bar">
+    <button class="back-btn" id="backBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <h1 class="page-title">Your Cart</h1>
+    <div class="spacer"></div>
+</div>
+</div>
+
+<div class="main-content">
+
+<div class="section-header">
+    <h2 class="section-title">Cart Items</h2>
+    <span class="item-count" id="headerItemCount">0 Items</span>
+</div>
+
+<div id="cartItemsContainer"></div>
+
+<div class="bill-details-card">
+    <h3 class="bill-title">Bill Details</h3>
+    <div class="bill-row">
+    <span>Order amount</span>
+    <span id="billOrderAmount">₹ 0</span>
+    </div>
+    <div class="bill-row">
+    <span>Convenience fee</span>
+    <span id="billConvFee">₹ 0</span>
+    </div>
+    <hr class="bill-divider">
+    <div class="bill-row total-row">
+    <span>Total bill</span>
+    <span id="billTotal">₹ 0</span>
+    </div>
+</div>
+
+<div class="action-button-container">
+    <button class="btn-pay" id="payBtn">Pay Now</button>
+</div>
+
+<div style="height: 120px;"></div>
+</div>
+
+<div class="bottom-nav">
+    <div class="nav-item" id="homeSlide">
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </div>
+    <div class="nav-item" style="height: 40px;" id="cardSlide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M3 9h18M7 13h5" />
+    </svg>
+    </div>
+    <div class="nav-item active" id="orderSlide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" viewBox="0 0 16 16">
+	<path d="M0 0h16v16H0z" fill="none" />
+	<path fill="none" stroke="currentColor" stroke-linejoin="round" d="M5 11.5h4M5 9h6M5 6.5h6m-5.5-4h-2v12h9v-12h-2m-5-1h5l-.625 2h-3.75z" />
+    </svg>
+    </div>
+    <div class="nav-item" id="profileSlide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </div>
+</div>
+
+<div class="greenLine1"></div>
+<div class="home-indicator"></div>
+
+</div>
+
+<script src="payment.js"></script>
+</body>
+</html>
